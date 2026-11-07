@@ -1,0 +1,26 @@
+python 3.12.3 Linux-6.18.44-fc-v242-x86_64-with-glibc2.39 x86_64
+case,n,m,seed/generator,algorithm,run1_ms,run2_ms,run3_ms,median_ms,positions
+random,500,50,seed 2026,naive,0.058,0.057,0.057,0.057,1
+random,500,50,seed 2026,kmp,0.060,0.055,0.057,0.057,1
+random,500,50,seed 2026,rk,0.174,0.155,0.153,0.155,1
+# random n=500 m=50 outputs identical across naive/kmp/rk: True
+random,1500,150,seed 2026,naive,0.194,0.194,0.196,0.194,1
+random,1500,150,seed 2026,kmp,0.184,0.179,0.185,0.184,1
+random,1500,150,seed 2026,rk,0.541,0.499,0.482,0.499,1
+# random n=1500 m=150 outputs identical across naive/kmp/rk: True
+random,3000,300,seed 2026,naive,0.409,0.397,0.299,0.397,1
+random,3000,300,seed 2026,kmp,0.354,0.368,0.356,0.356,1
+random,3000,300,seed 2026,rk,0.973,0.989,0.980,0.980,1
+# random n=3000 m=300 outputs identical across naive/kmp/rk: True
+repetitive,500,50,a^n / a^(m-1)b,naive,2.030,2.016,1.471,2.016,0
+repetitive,500,50,a^n / a^(m-1)b,kmp,0.069,0.078,0.068,0.069,0
+repetitive,500,50,a^n / a^(m-1)b,rk,0.073,0.074,0.079,0.074,0
+# repetitive n=500 m=50 outputs identical across naive/kmp/rk: True
+repetitive,1500,150,a^n / a^(m-1)b,naive,19.940,18.185,18.109,18.185,0
+repetitive,1500,150,a^n / a^(m-1)b,kmp,0.251,0.221,0.228,0.228,0
+repetitive,1500,150,a^n / a^(m-1)b,rk,0.251,0.238,0.236,0.238,0
+# repetitive n=1500 m=150 outputs identical across naive/kmp/rk: True
+repetitive,3000,300,a^n / a^(m-1)b,naive,43.747,43.331,43.274,43.331,0
+repetitive,3000,300,a^n / a^(m-1)b,kmp,0.476,0.464,0.475,0.475,0
+repetitive,3000,300,a^n / a^(m-1)b,rk,0.481,0.467,0.470,0.470,0
+# repetitive n=3000 m=300 outputs identical across naive/kmp/rk: True
